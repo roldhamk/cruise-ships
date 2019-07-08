@@ -1,15 +1,16 @@
+/* eslint-disable func-names */
 function Ship(currentPort) {
-    this.currentPort = currentPort
-};
+  this.currentPort = currentPort;
+}
 
 Ship.prototype = {
-    setSail: function() {
-        this.currentPort = undefined
-    },
+  setSail() {
+    this.currentPort = null;
+  },
 
-    dock(port) {
-        this.currentPort = port;
-    }
+  dock(port) {
+    this.currentPort = port;
+  },
 
 };
 
