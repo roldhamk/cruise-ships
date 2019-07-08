@@ -15,6 +15,14 @@ describe('Port', () => {
     const ship = new Ship('queenMary');
     dover.addShip(ship);
     expect(dover.ships).toContain(ship);
-
-  })
+  });
+  it('remove a ship from port', () => {
+    const port = new Port('Dover');
+    const titanic = new Ship('Titanic');
+    const queenMary = new Ship('queenMary');
+    port.addShip(titanic);
+    port.addShip(queenMary);
+    port.removeShip(titanic);
+    expect(port.ships).toEqual([queenMary]);
+  });
 });
