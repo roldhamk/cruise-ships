@@ -1,6 +1,7 @@
 function Port(name) {
   this.name = name;
   this.ships = [];
+  this.currentPort.addShip(this);
 }
 
 Port.prototype = {
@@ -9,7 +10,7 @@ Port.prototype = {
   },
   removeShip(ship) {
     this.ships.splice(ship, 1);
-  }
+  },
 };
 
 module.exports = Port;
