@@ -1,11 +1,9 @@
 /* eslint-disable func-names */
 
 function Ship(itinerary) {
-  this.currentPort = itinerary[0];
   this.itinerary = itinerary;
-  this.itinerary[0].ships.push(this);
+  this.currentPort = this.itinerary.ports[0];
   this.currentPort.addShip(this);
-
 }
 
 Ship.prototype = {
