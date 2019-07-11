@@ -19,16 +19,14 @@ describe('Port', () => {
 
   it('add ship to port', () => {
     const dover = new Port('Dover');
-    const itinerary = new Itinerary([dover]);
-    const ship = new Ship(itinerary);
+    const ship = jest.fn();
     dover.addShip(ship);
     expect(dover.ships).toContain(ship);
   });
   it('remove a ship from port', () => {
     const dover = new Port('Dover');
-    const itinerary = new Itinerary([dover]);
-    const titanic = new Ship(itinerary);
-    const queenMary = new Ship(itinerary);
+    const titanic = jest.fn();
+    const queenMary = jest.fn();
     dover.addShip(titanic);
     dover.addShip(queenMary);
     dover.removeShip(titanic);
