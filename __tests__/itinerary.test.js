@@ -2,9 +2,18 @@ const Itinerary = require('../src/itinerary');
 const Ship = require('../src/ship');
 const Port = require('../src/port');
 
+
 describe('Itinerary', () => {
   it('can be instaniated', () => {
-    const itinerary = new Itinerary();
+    const dover = {
+      name: 'Dover',
+    };
+    const calais = {
+      name: 'Calais',
+    };
+    const itinerary = {
+      ports: [dover, calais],
+    };
     expect(itinerary).toBeInstanceOf(Object);
   });
   it('can have ports', () => {
