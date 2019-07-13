@@ -48,10 +48,20 @@ describe('Ship', () => {
   });
 });
 it('can dock at a port', () => {
-  const dover = new Port('Dover');
-  const calais = new Port('Calais');
+  const dover = {
+    name: 'Dover',
+    removeShip: jest.fn(),
+    addShip: jest.fn(),
+  };
+  const calais = {
+    name: 'Dover',
+    removeShip: jest.fn(),
+    addShip: jest.fn(),
+  };
   const itinerary = new Itinerary([dover, calais]);
   const ship = new Ship(itinerary);
-  ship.dock(calais);
-  expect(ship.currentPort).toBe(dover, calais);
+  ship.setSail();
+  ship.dock();
+  expect(ship.currentPort).toBe(calais);
+  expect(calais.addShip).toHaveBeenCalledWith(ship);
 });
