@@ -23,7 +23,9 @@ describe('Ship', () => {
         name: 'Calais',
         ships: [],
       };
-      itinerary = new Itinerary([dover, calais]);
+      itinerary = {
+        ports: [dover, calais],
+      }
       ship = new Ship(itinerary);
     });
     it('can be created', () => {
@@ -58,7 +60,9 @@ it('can dock at a port', () => {
     removeShip: jest.fn(),
     addShip: jest.fn(),
   };
-  const itinerary = new Itinerary([dover, calais]);
+  const itinerary = {
+    ports: [dover, calais],
+  };
   const ship = new Ship(itinerary);
   ship.setSail();
   ship.dock();
